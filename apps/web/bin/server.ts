@@ -1,13 +1,11 @@
 /*
 |--------------------------------------------------------------------------
-| Ace entry point
+| HTTP server entrypoint
 |--------------------------------------------------------------------------
 |
-| The "console.ts" file is the entrypoint for booting the AdonisJS
-| command-line framework and executing commands.
-|
-| Commands do not boot the application, unless the currently running command
-| has "options.startApp" flag set to true.
+| The "server.ts" file is the entrypoint for starting the AdonisJS HTTP
+| server. Either you can run this file directly or use the "serve"
+| command to run this file and monitor file changes
 |
 */
 
@@ -34,13 +32,13 @@ const IMPORTER = (filePath: string) => {
 new Ignitor(APP_ROOT, { importer: IMPORTER })
   .tap((app) => {
     app.booting(async () => {
-      await import('#start/env')
+      await import('../start/env.ts')
     })
     app.listen('SIGTERM', () => app.terminate())
     app.listenIf(app.managedByPm2, 'SIGINT', () => app.terminate())
   })
-  .ace()
-  .handle(process.argv.splice(2))
+  .httpServer()
+  .start()
   .catch((error) => {
     process.exitCode = 1
     prettyPrintError(error)

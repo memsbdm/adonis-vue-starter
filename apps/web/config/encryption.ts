@@ -1,4 +1,4 @@
-import env from '#start/env'
+import env from '../start/env.ts'
 import { defineConfig, drivers } from '@adonisjs/core/encryption'
 
 const encryptionConfig = defineConfig({
