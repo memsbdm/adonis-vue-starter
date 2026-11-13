@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.{ts,tsx,js,jsx,json,md,vue,css}"
+      exclude:
+        - "**/.adonisjs/**"
+        - "**/routeTree.gen.ts"
+      run: yarn oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+    lint:
+      glob: "*.{ts,tsx,js,jsx,vue}"
+      exclude:
+        - "**/.adonisjs/**"
+        - "**/routeTree.gen.ts"
+      run: yarn oxlint --vue-plugin --fix {staged_files}
+      stage_fixed: true

@@ -9,6 +9,7 @@
   },
   "type": "module",
   "scripts": {
+    "prepare": "lefthook install",
     "dev": "yarn workspace @starter/web dev",
     "lint": "oxlint",
     "format": "oxfmt --write .",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@oxlint/plugins": "^1.93.0",
+    "lefthook": "^2.1.10",
     "oxfmt": "^0.78.0",
     "oxlint": "^1.93.0"
   },
