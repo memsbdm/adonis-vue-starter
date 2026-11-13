@@ -1,25 +1,24 @@
 <script setup lang="ts">
 import { usePage } from '@inertiajs/vue3';
-import { CircleAlert, CircleCheck } from 'lucide-vue-next';
+import { toaster, Toaster } from '@starter/design-system/toaster';
 import { watch } from 'vue';
-import { toast, Toaster } from 'vue-sonner';
 
 const page = usePage();
 
 watch(
 	() => page.url,
-	() => toast.dismiss(),
+	() => toaster.dismiss('flash'),
 );
 
 watch(
 	() => page.flash,
 	(flash) => {
 		if (flash.error) {
-			toast.error(flash.error, { id: 'flash' });
+			toaster.create({ id: 'flash', title: flash.error, type: 'error' });
 		}
 
 		if (flash.success) {
-			toast.success(flash.success, { id: 'flash' });
+			toaster.create({ id: 'flash', title: flash.success, type: 'success' });
 		}
 	},
 	{ immediate: true },
@@ -27,12 +26,5 @@ watch(
 </script>
 
 <template>
-	<Toaster position="top-center" :toast-options="{ unstyled: true }">
-		<template #success-icon>
-			<CircleCheck :size="18" :stroke-width="1.8" />
-		</template>
-		<template #error-icon>
-			<CircleAlert :size="18" :stroke-width="1.8" />
-		</template>
-	</Toaster>
+	<Toaster />
 </template>

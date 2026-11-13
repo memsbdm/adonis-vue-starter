@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import MarketingLayout from '~/layouts/marketing.vue';
+import AppLayout from '~/layouts/app.vue';
 </script>
 
 <template>
-	<MarketingLayout>
+	<AppLayout>
 		<div class="home">
 			<article class="prose-card">
 				<div class="pc-top">
@@ -18,5 +18,5 @@ import MarketingLayout from '~/layouts/marketing.vue';
 				</p>
 			</article>
 		</div>
-	</MarketingLayout>
+	</AppLayout>
 </template>

@@ -52,8 +52,7 @@
     "lucide-vue-next": "^1.0.0",
     "luxon": "^3.7.2",
     "reflect-metadata": "^0.2.2",
-    "vue": "catalog:",
-    "vue-sonner": "^2.0.9"
+		"vue": "catalog:"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^8.6.0",

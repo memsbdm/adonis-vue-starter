@@ -1,5 +1,4 @@
 import './css/reset.css';
-import 'vue-sonner/style.css';
 import { resolvePageComponent } from '@adonisjs/inertia/helpers';
 import { TuyauProvider } from '@adonisjs/inertia/vue';
 import { createInertiaApp } from '@inertiajs/vue3';

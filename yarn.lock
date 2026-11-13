@@ -2661,7 +2661,6 @@ __metadata:
     typescript: "catalog:"
     vite: "catalog:"
     vue: "catalog:"
-    vue-sonner: "npm:^2.0.9"
     vue-tsc: "npm:^3.3.14"
     youch: "npm:^4.1.1"
   languageName: unknown
@@ -8778,24 +8777,6 @@ __metadata:
   peerDependencies:
     vue: ">=2"
   checksum: 10c0/ff2630639fb4e3a9974927845bb32a6c69a8be82fc224e2a623939a59af5537f1859c8eb13a1e3bfd0811c13409de5501deaf7c719a980f51d7f97bef140cdb5
-  languageName: node
-  linkType: hard
-
-"vue-sonner@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "vue-sonner@npm:2.0.9"
-  peerDependencies:
-    "@nuxt/kit": ^4.0.3
-    "@nuxt/schema": ^4.0.3
-    nuxt: ^4.0.3
-  peerDependenciesMeta:
-    "@nuxt/kit":
-      optional: true
-    "@nuxt/schema":
-      optional: true
-    nuxt:
-      optional: true
-  checksum: 10c0/0001fcfd9163dd69f74bbbdbd50f61d7ceb514bf16571562cd51b0824b89cee809de2f93e1bb13fcc06375a07bc3e8bc1f552cb98e8ba1a665c8aecda47e039c
   languageName: node
   linkType: hard
 
