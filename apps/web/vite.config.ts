@@ -1,9 +1,10 @@
-import adonisjs from '@adonisjs/vite/client';
-import vue from '@vitejs/plugin-vue';
+import Adonisjs from '@adonisjs/vite/client';
+import TailwindCSS from '@tailwindcss/vite';
+import Vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [vue(), adonisjs({ entryPoints: ['inertia/app.ts'], reload: ['resources/views/**/*.edge'] })],
+	plugins: [TailwindCSS(), Vue(), Adonisjs({ entryPoints: ['inertia/app.ts'], reload: ['resources/views/**/*.edge'] })],
 
 	resolve: {
 		alias: {
