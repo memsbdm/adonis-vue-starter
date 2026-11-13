@@ -14,6 +14,7 @@
     "format": "oxfmt --write .",
     "format:check": "oxfmt --check .",
     "lint:fix": "oxlint --fix",
+    "storybook": "yarn workspace @starter/design-system storybook",
     "taze": "yarn dlx taze -r -I --maturity-period 3",
     "typecheck": "yarn workspaces foreach -p -A run typecheck"
   },

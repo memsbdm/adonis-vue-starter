@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from '@starter/design-system/button';
 import { ArrowUpRight } from 'lucide-vue-next';
 import MarketingLayout from '~/layouts/marketing.vue';
 </script>
@@ -17,6 +18,7 @@ import MarketingLayout from '~/layouts/marketing.vue';
 					Powered by Inertia and Vue, this setup blends server-driven routing with rich client-side interactivity that
 					feels seamless, fast, and cohesive.
 				</p>
+				<Button> Design-system </Button>
 
 				<p class="pc-para">This page is simply proof the engine started. Everything from here is yours to build.</p>
 
