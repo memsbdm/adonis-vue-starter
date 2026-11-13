@@ -21,6 +21,19 @@ export interface Registry {
       rawResponse: ExtractRawResponse<unknown>
     }
   }
+  'health_checks.execute': {
+    methods: ["GET","HEAD"]
+    pattern: '/health'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#app/core/controllers/health_checks_controller').default['execute']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#app/core/controllers/health_checks_controller').default['execute']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#app/core/controllers/health_checks_controller').default['execute']>>>
+    }
+  }
 }
 
 export namespace Route {

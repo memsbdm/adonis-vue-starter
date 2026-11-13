@@ -3,4 +3,8 @@
  * DO NOT EDIT manually
  */
 
-export const controllers = {}
+export const controllers = {
+  core: {
+    HealthChecks: () => import('#app/core/controllers/health_checks_controller'),
+  },
+}
