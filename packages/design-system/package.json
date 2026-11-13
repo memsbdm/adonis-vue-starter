@@ -4,7 +4,8 @@
 	"license": "UNLICENSED",
 	"type": "module",
 	"exports": {
-		"./button": "./src/atoms/button/button.vue"
+		"./button": "./src/atoms/button/button.vue",
+		"./toaster": "./src/atoms/toast/index.ts"
 	},
 	"scripts": {
 		"dev": "vite",

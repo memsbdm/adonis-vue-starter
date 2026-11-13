@@ -17,7 +17,7 @@ const {
 }>();
 
 const button = tv({
-	base: 'inline-flex cursor-pointer items-center justify-center rounded-md border border-gray-800 bg-gray-900 text-sm font-medium text-off-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 disabled:pointer-events-none disabled:opacity-50',
+	base: 'text-off-white inline-flex cursor-pointer items-center justify-center rounded-md border border-gray-800 bg-gray-900 text-sm font-medium shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 disabled:pointer-events-none disabled:opacity-50',
 
 	variants: {
 		color: {
