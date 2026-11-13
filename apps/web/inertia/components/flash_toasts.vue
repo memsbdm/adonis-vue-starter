@@ -14,9 +14,13 @@ watch(
 watch(
 	() => page.flash,
 	(flash) => {
-		if (flash.error) {toast.error(flash.error, { id: 'flash' });}
-		
-if (flash.success) {toast.success(flash.success, { id: 'flash' });}
+		if (flash.error) {
+			toast.error(flash.error, { id: 'flash' });
+		}
+
+		if (flash.success) {
+			toast.success(flash.success, { id: 'flash' });
+		}
 	},
 	{ immediate: true },
 );

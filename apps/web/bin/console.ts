@@ -28,8 +28,8 @@ const IMPORTER = (filePath: string) => {
 	if (filePath.startsWith('./') || filePath.startsWith('../')) {
 		return import(new URL(filePath, APP_ROOT).href);
 	}
-	
-return import(filePath);
+
+	return import(filePath);
 };
 
 new Ignitor(APP_ROOT, { importer: IMPORTER })

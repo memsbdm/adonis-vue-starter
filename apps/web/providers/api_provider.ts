@@ -28,8 +28,8 @@ class ApiSerializer extends BaseSerializer<{
 		if (!this.isLucidPaginatorMetaData(metaData)) {
 			throw new Error('Invalid pagination metadata. Expected metadata to contain Lucid pagination keys');
 		}
-		
-return metaData;
+
+		return metaData;
 	}
 }
 

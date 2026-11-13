@@ -6,8 +6,8 @@ import { UserSchema } from '#database/schema';
 export default class User extends compose(UserSchema, withAuthFinder(hash)) {
 	get initials() {
 		const [first, last] = this.fullName ? this.fullName.split(' ') : this.email.split('@');
-		
-if (first && last) {
+
+		if (first && last) {
 			return `${first.charAt(0)}${last.charAt(0)}`.toUpperCase();
 		}
 

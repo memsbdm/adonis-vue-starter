@@ -44,7 +44,7 @@ export default class InertiaMiddleware extends BaseInertiaMiddleware {
 
 		const success: string | undefined = session?.flashMessages.get('success');
 		const error: string | undefined = session?.flashMessages.get('error');
-		
+
 		// SAFETY: This application only flashes strings under the `error` and `success` keys.
 		return { success, error };
 	}

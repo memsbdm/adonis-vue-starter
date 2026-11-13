@@ -28,8 +28,8 @@ const page = usePage();
 const href = computed(() => urlFor(props.route));
 const isActive = computed(() => {
 	const path = page.url.split('?')[0];
-	
-return props.exact ? path === href.value : path === href.value || path.startsWith(`${href.value}/`);
+
+	return props.exact ? path === href.value : path === href.value || path.startsWith(`${href.value}/`);
 });
 </script>
 
