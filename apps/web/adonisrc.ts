@@ -124,7 +124,20 @@ export default defineConfig({
 	hooks: {
 		init: [
 			indexEntities({
-				transformers: { enabled: true, withSharedProps: true },
+				transformers: {
+					enabled: true,
+					withSharedProps: true,
+					source: './app',
+					glob: ['**/*_transformer.ts'],
+					importAlias: '#app',
+					inertiaMiddlewareImportPath: '#core/middleware/inertia_middleware',
+				},
+				controllers: {
+					enabled: true,
+					source: './app',
+					glob: ['**/*_controller.ts'],
+					importAlias: '#app',
+				},
 			}),
 			indexPages({ framework: 'vue3' }),
 			generateRegistry(),
