@@ -1,4 +1,4 @@
-import type { Data } from '@generated/data'
+import type { Data } from '@generated/data';
 
 /**
  * Bridge the shared props and flash data inferred from the Inertia
@@ -7,8 +7,8 @@ import type { Data } from '@generated/data'
  * call site.
  */
 declare module '@inertiajs/core' {
-  interface InertiaConfig {
-    sharedPageProps: Data.SharedProps
-    flashDataType: Data.FlashMessages
-  }
+	interface InertiaConfig {
+		sharedPageProps: Data.SharedProps;
+		flashDataType: Data.FlashMessages;
+	}
 }
