@@ -1,5 +1,5 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { db } from '#core/services/db';
+import { db } from '#app/core/services/db';
 import type { DB } from '#types/db';
 import type { Kysely, Transaction } from 'kysely';
 

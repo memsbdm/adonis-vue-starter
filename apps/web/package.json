@@ -6,8 +6,7 @@
   "type": "module",
   "imports": {
     "#app/*": "./app/*.js",
-    "#core/*": "./app/core/*.js",
-    "#identity/*": "./app/identity/*.js",
+    "#src/*": "./src/*.js",
     "#generated/*": "./.adonisjs/server/*.js",
     "#providers/*": "./providers/*.js",
     "#database/*": "./database/*.js",

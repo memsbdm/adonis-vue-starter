@@ -1,7 +1,7 @@
 import { symbols } from '@adonisjs/auth';
 import { inject } from '@adonisjs/core';
-import User from '#identity/domain/user';
-import UserRepository from '#identity/repositories/user_repository';
+import User from '#src/identity/domain/user';
+import UserRepository from '#src/identity/repositories/user_repository';
 import type { SessionGuardUser, SessionUserProviderContract } from '@adonisjs/auth/types/session';
 import type { ApplicationService } from '@adonisjs/core/types';
 

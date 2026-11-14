@@ -1,7 +1,7 @@
 import { inject } from '@adonisjs/core';
 import vine from '@vinejs/vine';
-import { Register } from '#identity/actions/register_action';
-import { email, password } from '#identity/validators/identity_validator';
+import { email, password } from '#app/identity/validators/identity_validator';
+import { Register } from '#src/identity/actions/register_action';
 import type { HttpContext } from '@adonisjs/core/http';
 
 @inject()

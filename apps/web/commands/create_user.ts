@@ -1,8 +1,8 @@
 import { BaseCommand, flags } from '@adonisjs/core/ace';
 import vine from '@vinejs/vine';
 import { make } from '#app/core/utils/index';
-import { Register } from '#identity/actions/register_action';
-import { email, password } from '#identity/validators/identity_validator';
+import { email, password } from '#app/identity/validators/identity_validator';
+import { Register } from '#src/identity/actions/register_action';
 import type { CommandOptions } from '@adonisjs/core/types/ace';
 
 const validator = vine.create({

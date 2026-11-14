@@ -68,8 +68,8 @@ export default defineConfig({
 |
 */
 	preloads: [
-		() => import('#core/routes'),
-		() => import('#identity/routes'),
+		() => import('#app/core/routes'),
+		() => import('#app/identity/routes'),
 		() => import('#start/kernel'),
 		() => import('#start/validator'),
 	],
@@ -137,7 +137,7 @@ export default defineConfig({
 					source: './app',
 					glob: ['**/*_transformer.ts'],
 					importAlias: '#app',
-					inertiaMiddlewareImportPath: '#core/middleware/inertia_middleware',
+					inertiaMiddlewareImportPath: '#app/core/middleware/inertia_middleware',
 				},
 				controllers: {
 					enabled: true,

@@ -1,6 +1,6 @@
 import { BaseCheck, Result } from '@adonisjs/core/health';
 import { sql } from 'kysely';
-import { db } from '#core/services/db';
+import { db } from '#app/core/services/db';
 
 export default class DatabaseCheck extends BaseCheck {
 	name = 'Database connection check';

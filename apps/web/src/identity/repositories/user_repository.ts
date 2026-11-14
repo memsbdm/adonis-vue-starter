@@ -2,9 +2,9 @@ import { randomUUIDv7 } from 'node:crypto';
 import { inject } from '@adonisjs/core';
 import { Result, type Result as ResultType } from 'better-result';
 import postgres from 'postgres';
-import { TransactionManager } from '#core/utils/transaction';
-import User from '#identity/domain/user';
-import { EmailAlreadyInUse } from '#identity/errors/email_already_in_use';
+import { TransactionManager } from '#app/core/utils/transaction';
+import User from '#src/identity/domain/user';
+import { EmailAlreadyInUse } from '#src/identity/errors/email_already_in_use';
 
 const userColumns = ['id', 'name', 'email', 'password', 'created_at', 'updated_at'] as const;
 

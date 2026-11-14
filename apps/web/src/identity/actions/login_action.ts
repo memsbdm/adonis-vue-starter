@@ -1,9 +1,9 @@
 import { inject } from '@adonisjs/core';
 import hash from '@adonisjs/core/services/hash';
 import { Result, type Result as ResultType } from 'better-result';
-import User from '#identity/domain/user';
-import { InvalidCredentials } from '#identity/errors/invalid_credentials';
-import UserRepository from '#identity/repositories/user_repository';
+import User from '#src/identity/domain/user';
+import { InvalidCredentials } from '#src/identity/errors/invalid_credentials';
+import UserRepository from '#src/identity/repositories/user_repository';
 
 @inject()
 export class Login {

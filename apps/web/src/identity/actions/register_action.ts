@@ -1,10 +1,10 @@
 import { inject } from '@adonisjs/core';
 import hash from '@adonisjs/core/services/hash';
 import { Result, type Result as ResultType } from 'better-result';
-import { TransactionManager } from '#core/utils/transaction';
-import User from '#identity/domain/user';
-import { EmailAlreadyInUse } from '#identity/errors/email_already_in_use';
-import UserRepository from '#identity/repositories/user_repository';
+import { TransactionManager } from '#app/core/utils/transaction';
+import User from '#src/identity/domain/user';
+import { EmailAlreadyInUse } from '#src/identity/errors/email_already_in_use';
+import UserRepository from '#src/identity/repositories/user_repository';
 
 @inject()
 export class Register {
