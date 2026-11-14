@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { Link } from '@adonisjs/inertia/vue';
-import { useForm } from '@inertiajs/vue3';
+import { useForm, usePage } from '@inertiajs/vue3';
+import AlertNote from '@starter/design-system/alert-note';
 import Button from '@starter/design-system/button';
+import Field from '@starter/design-system/field';
 import AppLayout from '~/layouts/app.vue';
 
+const page = usePage();
 const form = useForm({ email: '', password: '' });
 </script>
 
@@ -17,29 +20,23 @@ const form = useForm({ email: '', password: '' });
 				</div>
 
 				<form class="space-y-4" @submit.prevent="form.post('/login')">
-					<label class="block space-y-1.5 text-sm font-medium">
-						<span>Email address</span>
-						<input
-							v-model="form.email"
-							autocomplete="email"
-							type="email"
-							required
-							class="h-10 w-full rounded-md border border-gray-300 bg-white px-3 text-sm outline-none focus:border-gray-900"
-						/>
-						<span v-if="form.errors.email" class="block text-xs text-red-600">{{ form.errors.email }}</span>
-					</label>
-
-					<label class="block space-y-1.5 text-sm font-medium">
-						<span>Password</span>
-						<input
-							v-model="form.password"
-							autocomplete="current-password"
-							type="password"
-							required
-							class="h-10 w-full rounded-md border border-gray-300 bg-white px-3 text-sm outline-none focus:border-gray-900"
-						/>
-						<span v-if="form.errors.password" class="block text-xs text-red-600">{{ form.errors.password }}</span>
-					</label>
+					<AlertNote v-if="page.flash.error">{{ page.flash.error }}</AlertNote>
+					<Field
+						v-model="form.email"
+						label="Email address"
+						type="email"
+						autocomplete="email"
+						required
+						:error-message="form.errors.email"
+					/>
+					<Field
+						v-model="form.password"
+						label="Password"
+						type="password"
+						autocomplete="current-password"
+						required
+						:error-message="form.errors.password"
+					/>
 
 					<Button type="submit" class="w-full" :disabled="form.processing">Log in</Button>
 				</form>
