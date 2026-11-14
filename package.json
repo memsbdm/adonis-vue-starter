@@ -12,11 +12,13 @@
     "dev": "yarn workspace @starter/web dev",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
+		"docker:build": "docker build -t starter .",
     "format": "oxfmt --write .",
     "format:check": "oxfmt --check .",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "prepare": "lefthook install",
+		"release": "node bin/release.mjs",
     "storybook": "yarn workspace @starter/design-system storybook",
     "taze": "yarn dlx taze -r -I --maturity-period 3",
     "typecheck": "yarn workspaces foreach -p -A run typecheck"
