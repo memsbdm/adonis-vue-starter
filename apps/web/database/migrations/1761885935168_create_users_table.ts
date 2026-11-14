@@ -1,21 +1,24 @@
-import { BaseSchema } from '@adonisjs/lucid/schema';
+import { sql, type Kysely } from 'kysely';
 
-export default class extends BaseSchema {
-	protected tableName = 'users';
+export async function up(db: Kysely<unknown>) {
+	await db.schema
+		.createTable('users')
+		.addColumn('id', 'uuid', (column) => column.primaryKey())
+		.addColumn('name', 'text')
+		.addColumn('email', 'text', (column) => column.notNull())
+		.addColumn('password', 'text', (column) => column.notNull())
+		.addColumn('created_at', 'timestamptz', (column) => column.notNull().defaultTo(sql`now()`))
+		.addColumn('updated_at', 'timestamptz')
+		.execute();
 
-	async up() {
-		this.schema.createTable(this.tableName, (table) => {
-			table.increments('id').notNullable();
-			table.string('full_name').nullable();
-			table.string('email', 254).notNullable().unique();
-			table.string('password').notNullable();
+	await db.schema
+		.createIndex('users_email_unique')
+		.unique()
+		.on('users')
+		.expression(sql`lower(email)`)
+		.execute();
+}
 
-			table.timestamp('created_at').notNullable();
-			table.timestamp('updated_at').nullable();
-		});
-	}
-
-	async down() {
-		this.schema.dropTable(this.tableName);
-	}
+export async function down(db: Kysely<unknown>) {
+	await db.schema.dropTable('users').execute();
 }

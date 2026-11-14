@@ -1,5 +1,6 @@
 import { defineConfig } from '@adonisjs/auth';
-import { sessionGuard, sessionUserProvider } from '@adonisjs/auth/session';
+import { sessionGuard } from '@adonisjs/auth/session';
+import { configProvider } from '@adonisjs/core';
 import type { InferAuthenticators, InferAuthEvents, Authenticators } from '@adonisjs/auth/types';
 
 const authConfig = defineConfig({
@@ -18,8 +19,10 @@ const authConfig = defineConfig({
 			 */
 			useRememberMeTokens: false,
 
-			provider: sessionUserProvider({
-				model: () => import('#identity/models/user'),
+			provider: configProvider.create(async (app) => {
+				const { makeSessionKyselyUserProvider } = await import('#identity/session_user_provider');
+
+				return makeSessionKyselyUserProvider(app);
 			}),
 		}),
 	},

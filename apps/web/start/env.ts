@@ -22,14 +22,10 @@ export default await Env.create(new URL('../', import.meta.url), {
 	APP_KEY: Env.schema.secret(),
 
 	// Session
-	SESSION_DRIVER: Env.schema.enum(['cookie', 'memory', 'database'] as const),
+	SESSION_DRIVER: Env.schema.enum(['cookie', 'memory'] as const),
 
 	// Database
-	DB_HOST: Env.schema.string({ format: 'host' }),
-	DB_PORT: Env.schema.number(),
-	DB_USER: Env.schema.string(),
-	DB_PASSWORD: Env.schema.string.optional(),
-	DB_DATABASE: Env.schema.string(),
+	DATABASE_URL: Env.schema.secret(),
 
 	// Misc
 	SECRET_TOKEN: Env.schema.string(),
