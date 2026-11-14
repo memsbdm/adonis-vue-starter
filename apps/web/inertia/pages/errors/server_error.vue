@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import AppLayout from '~/layouts/app.vue';
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -10,11 +13,11 @@ import AppLayout from '~/layouts/app.vue';
 					<span class="pc-status mono tag" :style="{ color: '#c0392b' }"> <span class="dot" /> 500 </span>
 				</div>
 				<div class="pc-lead">
-					<span>Something broke.</span>
-					<em>The server hit an unexpected error.</em>
+					<span>{{ t('errors.serverTitle') }}</span>
+					<em>{{ t('errors.serverDescription') }}</em>
 				</div>
 				<p class="pc-para">
-					Try again in a moment. If the problem persists, check the server logs for the underlying exception.
+					{{ t('errors.serverHelp') }}
 				</p>
 			</article>
 		</div>

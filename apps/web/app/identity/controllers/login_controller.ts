@@ -14,12 +14,12 @@ export default class LoginController {
 		return inertia.render('identity/login', {});
 	}
 
-	async execute({ auth, request, response, session }: HttpContext) {
+	async execute({ auth, i18n, request, response, session }: HttpContext) {
 		const payload = await request.validateUsing(LoginController.validator);
 		const result = await this.login.execute(payload);
 
 		if (result.isErr()) {
-			const message = result.error.match({ InvalidCredentials: () => 'Email or password is incorrect.' });
+			const message = result.error.match({ InvalidCredentials: () => i18n.t('messages.identity.invalid_credentials') });
 			session.flash('error', message);
 
 			return response.redirect().back();

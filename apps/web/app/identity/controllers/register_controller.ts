@@ -19,12 +19,12 @@ export default class RegisterController {
 		return inertia.render('identity/register', {});
 	}
 
-	async execute({ auth, request, response, session }: HttpContext) {
+	async execute({ auth, i18n, request, response, session }: HttpContext) {
 		const payload = await request.validateUsing(RegisterController.validator);
 		const result = await this.register.execute(payload);
 
 		if (result.isErr()) {
-			const message = result.error.match({ EmailAlreadyInUse: () => 'An account already exists for this email.' });
+			const message = result.error.match({ EmailAlreadyInUse: () => i18n.t('messages.identity.email_already_in_use') });
 			session.flash('error', message);
 
 			return response.redirect().back();

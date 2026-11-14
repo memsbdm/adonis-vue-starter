@@ -1,1 +1,6 @@
-{}
+{
+	"identity": {
+		"invalid_credentials": "L’adresse e-mail ou le mot de passe est incorrect.",
+		"email_already_in_use": "Un compte existe déjà avec cette adresse e-mail."
+	}
+}

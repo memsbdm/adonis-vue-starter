@@ -1,6 +1,18 @@
 {
 	"shared": {
-		"fields": {},
-		"messages": {}
+		"fields": {
+			"fullName": "nom complet",
+			"email": "adresse e-mail",
+			"password": "mot de passe",
+			"passwordConfirmation": "confirmation du mot de passe"
+		},
+		"messages": {
+			"required": "Le champ {field} est obligatoire.",
+			"string": "Le champ {field} doit être du texte.",
+			"email": "Saisissez une adresse e-mail valide.",
+			"minLength": "Le champ {field} doit contenir au moins {min} caractères.",
+			"maxLength": "Le champ {field} ne doit pas dépasser {max} caractères.",
+			"confirmed": "Les champs {originalField} et {otherField} doivent être identiques."
+		}
 	}
 }

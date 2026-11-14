@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { Link } from '@adonisjs/inertia/vue';
 import { router, usePage } from '@inertiajs/vue3';
+import { useI18n } from 'vue-i18n';
 import FlashToasts from '~/components/flash_toasts.vue';
 
 const page = usePage();
+const { t } = useI18n();
 </script>
 
 <template>
@@ -15,12 +17,12 @@ const page = usePage();
 					<template v-if="page.props.user">
 						<span class="text-gray-600">{{ page.props.user.fullName }}</span>
 						<form @submit.prevent="router.post('/logout')">
-							<button type="submit" class="font-medium text-gray-900 underline">Log out</button>
+							<button type="submit" class="font-medium text-gray-900 underline">{{ t('common.logOut') }}</button>
 						</form>
 					</template>
 					<template v-else>
-						<Link route="login.render" class="font-medium text-gray-900">Log in</Link>
-						<Link route="register.render" class="font-medium text-gray-900">Create account</Link>
+						<Link route="login.render" class="font-medium text-gray-900">{{ t('common.logIn') }}</Link>
+						<Link route="register.render" class="font-medium text-gray-900">{{ t('common.createAccount') }}</Link>
 					</template>
 				</nav>
 			</div>
