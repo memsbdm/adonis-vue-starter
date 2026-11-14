@@ -14,22 +14,16 @@ export default class InertiaMiddleware extends BaseInertiaMiddleware {
 		 * with all the properties
 		 */
 		// SAFETY: Adonis may invoke this hook before auth middleware hydrates the context.
-		const { auth, request } = ctx as Partial<HttpContext>;
-
-		const theme: 'light' | 'dark' =
-			request?.plainCookie('app_theme', {
-				defaultValue: 'light',
-				encoded: false,
-			}) ?? 'light';
+		const { auth } = ctx as Partial<HttpContext>;
 
 		/**
 		 * Data shared with all Inertia pages. Make sure you are using
 		 * transformers for rich data-types like Models.
 		 */
 		return {
+			locale: ctx.i18n?.locale ?? 'en',
 			errors: ctx.inertia.always(this.getValidationErrors(ctx)),
 			user: ctx.inertia.always(auth?.user ? UserTransformer.transform(auth.user) : undefined),
-			preferences: ctx.inertia.always({ theme }),
 		};
 	}
 

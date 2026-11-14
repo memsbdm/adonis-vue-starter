@@ -27,6 +27,7 @@ router.use([
 	() => import('@adonisjs/shield/shield_middleware'),
 	() => import('@adonisjs/auth/initialize_auth_middleware'),
 	() => import('#identity/middleware/silent_auth_middleware'),
+	() => import('#core/middleware/detect_user_locale_middleware'),
 ]);
 
 export const middleware = router.named({

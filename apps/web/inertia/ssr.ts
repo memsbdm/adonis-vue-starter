@@ -4,6 +4,7 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { renderToString } from '@vue/server-renderer';
 import { createSSRApp, h, type DefineComponent } from 'vue';
 import { client } from '~/client';
+import { i18nConfig } from './18n';
 
 export default function render(page: any) {
 	return createInertiaApp({
@@ -16,9 +17,14 @@ export default function render(page: any) {
 			);
 		},
 		setup: ({ App, props, plugin }) => {
+			const locale = props.initialPage.props.locale;
+			const i18n = i18nConfig(locale);
+
 			return createSSRApp({
 				render: () => h(TuyauProvider, { client }, { default: () => h(App, props) }),
-			}).use(plugin);
+			})
+				.use(plugin)
+				.use(i18n);
 		},
 	});
 }
