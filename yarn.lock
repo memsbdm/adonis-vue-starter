@@ -2607,6 +2607,7 @@ __metadata:
     "@vinejs/vine": "npm:^4.4.0"
     "@vitejs/plugin-vue": "catalog:"
     "@vue/server-renderer": "npm:^3.5.45"
+    better-result: "npm:^3.0.1"
     edge.js: "npm:^6.5.1"
     hot-hook: "npm:^1.1.0"
     kysely: "npm:^0.29.5"
@@ -4669,6 +4670,13 @@ __metadata:
   dependencies:
     safe-buffer: "npm:5.1.2"
   checksum: 10c0/05f56db3a0fc31c89c86b605231e32ee143fb6ae38dc60616bc0970ae6a0f034172def99e69d3aed0e2c9e7cac84e2d63bc51a0b5ff6ab5fc8808cc8b29923c1
+  languageName: node
+  linkType: hard
+
+"better-result@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "better-result@npm:3.0.1"
+  checksum: 10c0/e1057cc22aa78fa1c239223d9a33e0643858d65a7b32625c174fa44b402b15fa9217448f6310924ad03b911c5df1b9890270e7640d3d84d53e9d1d30dbc84bc9
   languageName: node
   linkType: hard
 

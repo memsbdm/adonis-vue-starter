@@ -41,6 +41,7 @@
     "@tuyau/core": "^1.3.0",
     "@vinejs/vine": "^4.4.0",
     "@vue/server-renderer": "^3.5.45",
+    "better-result": "^3.0.1",
     "edge.js": "^6.5.1",
     "kysely": "^0.29.5",
     "kysely-postgres-js": "^3.0.0",

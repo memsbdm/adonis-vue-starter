@@ -4,30 +4,30 @@ type ParamValue = string | number | bigint | boolean
 
 export type ScannedRoutes = {
   ALL: {
-    'identity.login.show': { paramsTuple?: []; params?: {} }
-    'identity.login': { paramsTuple?: []; params?: {} }
-    'identity.register.show': { paramsTuple?: []; params?: {} }
-    'identity.register': { paramsTuple?: []; params?: {} }
-    'identity.logout': { paramsTuple?: []; params?: {} }
     'home': { paramsTuple?: []; params?: {} }
     'health_checks.execute': { paramsTuple?: []; params?: {} }
+    'login.render': { paramsTuple?: []; params?: {} }
+    'login.execute': { paramsTuple?: []; params?: {} }
+    'register.render': { paramsTuple?: []; params?: {} }
+    'register.execute': { paramsTuple?: []; params?: {} }
+    'logout.execute': { paramsTuple?: []; params?: {} }
   }
   GET: {
-    'identity.login.show': { paramsTuple?: []; params?: {} }
-    'identity.register.show': { paramsTuple?: []; params?: {} }
     'home': { paramsTuple?: []; params?: {} }
     'health_checks.execute': { paramsTuple?: []; params?: {} }
+    'login.render': { paramsTuple?: []; params?: {} }
+    'register.render': { paramsTuple?: []; params?: {} }
   }
   HEAD: {
-    'identity.login.show': { paramsTuple?: []; params?: {} }
-    'identity.register.show': { paramsTuple?: []; params?: {} }
     'home': { paramsTuple?: []; params?: {} }
     'health_checks.execute': { paramsTuple?: []; params?: {} }
+    'login.render': { paramsTuple?: []; params?: {} }
+    'register.render': { paramsTuple?: []; params?: {} }
   }
   POST: {
-    'identity.login': { paramsTuple?: []; params?: {} }
-    'identity.register': { paramsTuple?: []; params?: {} }
-    'identity.logout': { paramsTuple?: []; params?: {} }
+    'login.execute': { paramsTuple?: []; params?: {} }
+    'register.execute': { paramsTuple?: []; params?: {} }
+    'logout.execute': { paramsTuple?: []; params?: {} }
   }
 }
 declare module '@adonisjs/core/types/http' {

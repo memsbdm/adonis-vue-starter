@@ -8,36 +8,6 @@ export type { Route, Path } from './schema.d.ts'
 const placeholder: any = {}
 
 const routes = {
-  'identity.login.show': {
-    methods: ["GET","HEAD"],
-    pattern: '/login',
-    tokens: [[0,"login"]],
-    types: placeholder as Registry['identity.login.show']['types'],
-  },
-  'identity.login': {
-    methods: ["POST"],
-    pattern: '/login',
-    tokens: [[0,"login"]],
-    types: placeholder as Registry['identity.login']['types'],
-  },
-  'identity.register.show': {
-    methods: ["GET","HEAD"],
-    pattern: '/register',
-    tokens: [[0,"register"]],
-    types: placeholder as Registry['identity.register.show']['types'],
-  },
-  'identity.register': {
-    methods: ["POST"],
-    pattern: '/register',
-    tokens: [[0,"register"]],
-    types: placeholder as Registry['identity.register']['types'],
-  },
-  'identity.logout': {
-    methods: ["POST"],
-    pattern: '/logout',
-    tokens: [[0,"logout"]],
-    types: placeholder as Registry['identity.logout']['types'],
-  },
   'home': {
     methods: ["GET","HEAD"],
     pattern: '/',
@@ -49,6 +19,36 @@ const routes = {
     pattern: '/health',
     tokens: [[0,"health"]],
     types: placeholder as Registry['health_checks.execute']['types'],
+  },
+  'login.render': {
+    methods: ["GET","HEAD"],
+    pattern: '/login',
+    tokens: [[0,"login"]],
+    types: placeholder as Registry['login.render']['types'],
+  },
+  'login.execute': {
+    methods: ["POST"],
+    pattern: '/login',
+    tokens: [[0,"login"]],
+    types: placeholder as Registry['login.execute']['types'],
+  },
+  'register.render': {
+    methods: ["GET","HEAD"],
+    pattern: '/register',
+    tokens: [[0,"register"]],
+    types: placeholder as Registry['register.render']['types'],
+  },
+  'register.execute': {
+    methods: ["POST"],
+    pattern: '/register',
+    tokens: [[0,"register"]],
+    types: placeholder as Registry['register.execute']['types'],
+  },
+  'logout.execute': {
+    methods: ["POST"],
+    pattern: '/logout',
+    tokens: [[0,"logout"]],
+    types: placeholder as Registry['logout.execute']['types'],
   },
 } as const satisfies Record<string, AdonisEndpoint>
 
